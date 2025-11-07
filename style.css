@@ -70,6 +70,22 @@ button{
     transition:0.2s;
 }
 button:hover{background:var(--neon2);}
+
+.button{
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    border:none;
+    background:var(--neon1);
+    color:#000;
+    font-weight:600;
+    font-size:1rem;
+    cursor:pointer;
+    margin-top:12px;
+    transition:0.2s;
+}
+.button:hover{background:var(--neon2);}
+
 .center{text-align:center;}
 .board{
     display:grid;
