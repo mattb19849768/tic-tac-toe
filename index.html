@@ -10,32 +10,33 @@
 <div class="container">
   <h1>Neon Tic-Tac-Toe Setup</h1>
 
-  <label>Player 1 Name</label>
-  <input type="text" id="p1" placeholder="Player 1" value="Player 1">
+<label class="player">Player 1 Name</label>
+<input type="text" id="p1" placeholder="Player 1" value="Player 1">
 
-  <label>Player 2 Name / Computer</label>
-  <input type="text" id="p2" placeholder="Player 2 / Computer" value="Computer">
+<label class="player">Player 2 Name / Computer</label>
+<input type="text" id="p2" placeholder="Player 2 / Computer" value="Computer">
 
-  <label>Mode</label>
-  <div class="radio-group" id="modeGroup">
-    <div class="radio selected" data-value="single">Single Player</div>
-    <div class="radio" data-value="two">Two Players</div>
-  </div>
+<label class="mode">Mode</label>
+<div class="radio-group" id="modeGroup">
+  <div class="radio mode selected" data-value="single">Single Player</div>
+  <div class="radio mode" data-value="two">Two Players</div>
+</div>
 
-  <label>Difficulty</label>
-  <div class="radio-group" id="diffGroup">
-    <div class="radio selected" data-value="normal">Normal</div>
-    <div class="radio" data-value="nightmare">Nightmare</div>
-  </div>
+<label class="difficulty">Difficulty</label>
+<div class="radio-group" id="diffGroup">
+  <div class="radio difficulty selected" data-value="normal">Normal</div>
+  <div class="radio difficulty" data-value="nightmare">Nightmare</div>
+</div>
 
-  <label>Sound Effects</label>
-  <div class="radio-group" id="soundGroup">
-    <div class="radio selected" data-value="on">On</div>
-    <div class="radio" data-value="off">Off</div>
-  </div>
   <a href="https://mattb19849768.github.io/Game-hub/" id="gameHub" class="button" style="text-decoration: none;">Game Hub</a>
   <button id="startBtn">Start Game</button>
+  
+  <footer>
+    <img src="images/logo.png" alt="Game Hub Logo" class="footer-logo" />
+    © 2025 Daddy — Hosted on GitHub Pages
+  </footer>
 </div>
+	  
 
 <script>
 function wireGroup(groupId){
@@ -47,20 +48,18 @@ function wireGroup(groupId){
     label.classList.add('selected');
   });
 }
-['modeGroup','diffGroup','soundGroup'].forEach(wireGroup);
+['modeGroup','diffGroup'].forEach(wireGroup);
 
 document.getElementById('startBtn').addEventListener('click',()=>{
   const p1 = document.getElementById('p1').value || 'Player 1';
   const p2 = document.getElementById('p2').value || 'Computer';
   const mode = document.querySelector('#modeGroup .radio.selected').dataset.value;
   const diff = document.querySelector('#diffGroup .radio.selected').dataset.value;
-  const sound = document.querySelector('#soundGroup .radio.selected').dataset.value;
 
   localStorage.setItem('ttt_p1',p1);
   localStorage.setItem('ttt_p2',p2);
   localStorage.setItem('ttt_mode',mode);
   localStorage.setItem('ttt_diff',diff);
-  localStorage.setItem('ttt_sound',sound);
 
   window.location.href='game.html';
 });

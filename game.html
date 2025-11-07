@@ -11,7 +11,7 @@
   <h1>Neon Tic-Tac-Toe</h1>
 
   <div class="status" id="status">Loading...</div>
-
+ <div class="board-frame"> 
   <div class="board" id="board">
     <div class="cell" data-cell="0"></div>
     <div class="cell" data-cell="1"></div>
@@ -22,11 +22,10 @@
     <div class="cell" data-cell="6"></div>
     <div class="cell" data-cell="7"></div>
     <div class="cell" data-cell="8"></div>
-  </div>
-
+   </div>
+</div>
   <div class="center">
     <button id="newRoundBtn">New Round</button>
-    <button id="soundToggleBtn">Sound: On</button>
     <button onclick="window.location='index.html'">Home</button>
   </div>
 
@@ -35,12 +34,22 @@
     O Wins: <span id="scoreO">0</span> | 
     Ties: <span id="scoreTies">0</span>
   </div>
+    <footer>
+    <img src="images/logo.png" alt="Game Hub Logo" class="footer-logo" />
+    © 2025 Daddy — Hosted on GitHub Pages
+  </footer>
 </div>
 
-<!-- Sounds -->
-<audio id="soundX" src="https://www.soundjay.com/button/beep-07.wav"></audio>
-<audio id="soundO" src="https://www.soundjay.com/button/beep-06.wav"></audio>
-<audio id="soundWin" src="https://www.soundjay.com/button/button-3.wav"></audio>
+
+
+<div id="resultModal">
+  <div class="modal-content">
+    <span id="closeModal">&times;</span>
+    <div id="resultText">Player X Wins!</div>
+    <button id="restartBtn">Play Again</button>
+  </div>
+</div>
+
 
 <script src="game.js"></script>
 </body>
