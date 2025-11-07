@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neon Tic-Tac-Toe Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Neon Tic-Tac-Toe</h1>
+
+  <div class="status" id="status">Loading...</div>
+
+  <div class="board" id="board">
+    <div class="cell" data-cell="0"></div>
+    <div class="cell" data-cell="1"></div>
+    <div class="cell" data-cell="2"></div>
+    <div class="cell" data-cell="3"></div>
+    <div class="cell" data-cell="4"></div>
+    <div class="cell" data-cell="5"></div>
+    <div class="cell" data-cell="6"></div>
+    <div class="cell" data-cell="7"></div>
+    <div class="cell" data-cell="8"></div>
+  </div>
+
+  <div class="center">
+    <button id="newRoundBtn">New Round</button>
+    <button id="soundToggleBtn">Sound: On</button>
+    <button onclick="window.location='setup.html'">Back to Setup</button>
+  </div>
+
+  <div class="status" id="scoreboard">
+    X Wins: <span id="scoreX">0</span> | 
+    O Wins: <span id="scoreO">0</span> | 
+    Ties: <span id="scoreTies">0</span>
+  </div>
+</div>
+
+<!-- Sounds -->
+<audio id="soundX" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+<audio id="soundO" src="https://www.soundjay.com/button/beep-06.wav"></audio>
+<audio id="soundWin" src="https://www.soundjay.com/button/button-3.wav"></audio>
+
+<script src="game.js"></script>
+</body>
+</html>
